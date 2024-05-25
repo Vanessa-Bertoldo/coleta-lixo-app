@@ -1,6 +1,6 @@
 package br.com.app.coleta.lixo.controller;
 
-import br.com.app.coleta.lixo.models.AgendamentoDTO;
+import br.com.app.coleta.lixo.dto.ColetaDTO;
 import br.com.app.coleta.lixo.service.ColetaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,13 +16,13 @@ public class ColetaController {
 
     @GetMapping
     public ResponseEntity<?> buscaTodasColetas() {
-        coletaService.buscarTodasColeta();
+        coletaService.buscarTodasColetas();
         return ResponseEntity.ok().build();
     }
 
     @PostMapping("/agendamento")
-    public ResponseEntity<?> agendaColeta(@RequestBody AgendamentoDTO agendamentoDTO) {
-        coletaService.agendarColeta(agendamentoDTO);
+    public ResponseEntity<?> agendaColeta(@RequestBody ColetaDTO coletaDTO) {
+        //coletaService.agendarColeta(agendamentoDTO);
         return ResponseEntity.ok().build();
     }
 
