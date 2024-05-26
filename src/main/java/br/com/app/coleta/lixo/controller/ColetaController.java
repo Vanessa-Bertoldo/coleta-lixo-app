@@ -15,10 +15,13 @@ public class ColetaController {
     private final ColetaService coletaService;
 
     @GetMapping
-    public ResponseEntity<?> buscaTodasColetas() {
-        coletaService.buscarTodasColetas();
-        return ResponseEntity.ok().build();
+    public String buscaTodasColetas(){
+        return "OK";
     }
+//    public ResponseEntity<?> buscaTodasColetas() {
+//        coletaService.buscarTodasColetas();
+//        return ResponseEntity.ok().build();
+//    }
 
     @PostMapping("/agendamento")
     public ResponseEntity<?> agendaColeta(@RequestBody ColetaDTO coletaDTO) {
